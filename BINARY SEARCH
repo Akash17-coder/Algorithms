@@ -1,0 +1,49 @@
+#PYTHON 3
+'''
+........************........
+         RECURSION 
+........************........
+'''
+data=list(map(int,input().strip().split()))
+def binary_search(l,h,data,key):
+    #print(l,h)
+    #print(key)
+    if h>=l:
+        m=(l+h)//2
+        #print(m)
+        if data[m]==key:
+            return "FOUND"
+        else:
+            if data[m]<key:
+                #print("L")
+                l=m+1
+                return binary_search(l,h,data,key)
+            else:
+                h=m-1
+                #print("H")
+                return binary_search(l,h,data,key)
+    else:
+        return "NOTFOUND"
+print(binary_search(0,len(data)-1,sorted(data),int(input())))
+''' 
+............*************............
+          ITERATIVE APPROACH
+............*************............
+'''
+data=list(map(int,input().strip().split()))
+data.sort()
+l=0
+h=len(data)-1
+key=int(input())
+while h>=l:
+    m=(l+h)//2
+    if data[m]==key:
+        print("FOUND")
+        break
+    else:
+        if data[m]>key:
+            h=m-1
+        else:
+            l=m+1
+else:
+    print("NOT FOUND")
