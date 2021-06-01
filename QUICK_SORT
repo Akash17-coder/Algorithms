@@ -1,0 +1,21 @@
+#______________________QUICK SORT____________________________________________________________________________
+
+def partition(l,j):
+    i=l
+    while i<j:
+        while i<len(arr) and arr[i]<=arr[l]:
+            i+=1
+        while arr[j]>arr[l] and j>-1:
+            j-=1
+        if i<j:
+            arr[i],arr[j]=arr[j],arr[i]
+    arr[j],arr[l]=arr[l],arr[j]
+    return j
+def quick_sort(l,h):
+    if l<h:
+        j=partition(l,h)
+        quick_sort(l,j)
+        quick_sort(j+1,h)
+arr=list(map(int,input().strip().split()))
+quick_sort(0,len(arr)-1)
+print(arr)
