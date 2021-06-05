@@ -1,0 +1,8 @@
+''' 
+Here we wre provided with the Jobs ,profits and their time lines when they should be submitted
+We have to prepare an order of job sequence such that we should get maximum profit.
+
+SOLUTION
+First sort the profits in the decreasing manner such that their deadlines should be sorted accordingly
+'''
+
